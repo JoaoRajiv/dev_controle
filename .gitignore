@@ -1,38 +1,45 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# Dependency files
 /node_modules
 /.pnp
 .pnp.js
-.yarn/install-state.gz
 
-# testing
+# Testing
 /coverage
 
-# next.js
+# Next.js build output
 /.next/
 /out/
+# next-env.d.ts é gerado pelo Next.js e não deve ser comitado
+/next-env.d.ts
 
-# production
-/build
+# Configuration files
+# Arquivos de ambiente e senhas
+.env
+.env.local
+.env.development.local
+.env.production.local
+.env.test
 
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# local env files
-.env*.local
+# Database (Prisma)
+# Diretórios gerados pelo Prisma
+/prisma/dev.db
+# Banners/diretórios de engines do Prisma
+/prisma/generated/
+/src/generated/
 
-# vercel
-.vercel
+# Outras caches e arquivos temporários
+.eslintcache
+.prettiercache
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-/src/generated/prisma
+# Editor e IDE
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
