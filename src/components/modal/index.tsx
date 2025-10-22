@@ -1,0 +1,11 @@
+export function ModalTicket() {
+  return (
+    <section className="absolute bg-gray-900/60 w-full min-h-screen">
+      <div className="absolute inset-0 flex justify-center items-center">
+        <div className="bg-white shadow-lg w-4/5 md:w-1/2 max-w-2xl p-3 rounded-lg">
+          <h1>Detalhes do chamado</h1>
+        </div>
+      </div>
+    </section>
+  );
+}

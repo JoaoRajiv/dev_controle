@@ -1,25 +1,47 @@
-export function CardCustomer() {
+"use client";
+
+import { CustomerProps } from "@/utils/customer.type";
+import { api } from "@/lib/api";
+import { useRouter } from "next/navigation";
+
+export function CardCustomer({ customer }: { customer: CustomerProps }) {
+  const router = useRouter();
+
+  async function handleDeleteCustomer() {
+    try {
+      const response = await api.delete(`/api/customer`, {
+        params: { id: customer.id }
+      });
+      router.refresh();
+    } catch (error) {
+      console.log("Failed to delete customer", error);
+    }
+  }
+
   return (
     <article className="flex flex-col bg-gray-100 border-2 p-2 rounded-lg gap-2 hover:scale-105 duration-200">
       <h2>
         <a href="" className="font-bold">
           Nome:
         </a>{" "}
-        Rajiv
+        {customer.name}
       </h2>
       <p>
         <a href="" className="font-bold">
           Email:
         </a>{" "}
-        rajiv@teste.com
+        {customer.email}
       </p>
       <p>
         <a href="" className="font-bold">
           Telefone:
         </a>{" "}
-        99999-9999
+        {customer.phone}
       </p>
-      <button className="bg-red-500 px-4 rounded text-white mt-2 self-start hover:bg-red-600 duration-300">
+      <button
+        className="bg-red-500 px-4 rounded text-white mt-2 self-start hover:bg-red-600 duration-300"
+        onClick={handleDeleteCustomer}
+      >
         Deletar
       </button>
     </article>

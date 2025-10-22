@@ -4,12 +4,27 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { TicketItem } from "./components/ticket";
+import prismaClient from "@/lib/prisma";
 
 export default async function Dashboard() {
   const session = await getServerSession(authOptions);
   if (!session || !session.user) {
     redirect("/");
   }
+
+  const tickets = await prismaClient.ticket.findMany({
+    where: {
+      userId: session.user.id,
+      status: "ABERTO"
+    },
+    include: {
+      customer: true
+    },
+    orderBy: {
+      created_at: "desc"
+    }
+  });
+
   return (
     <Container>
       <main className="mt-9 mb-2">
@@ -34,10 +49,20 @@ export default async function Dashboard() {
             </tr>
           </thead>
           <tbody>
-            <TicketItem></TicketItem>
-            <TicketItem></TicketItem>
+            {tickets.map(ticket => (
+              <TicketItem
+                key={ticket.id}
+                ticket={ticket}
+                customer={ticket.customer}
+              />
+            ))}
           </tbody>
         </table>
+        {tickets.length === 0 && (
+          <p className="mt-6 px-2 md:px-0 text-gray-600">
+            Nenhum chamado encontrado.
+          </p>
+        )}
       </main>
     </Container>
   );
