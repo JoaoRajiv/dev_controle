@@ -697,6 +697,9 @@ video {
 .justify-between {
   justify-content: space-between;
 }
+.gap-1 {
+  gap: 0.25rem;
+}
 .gap-2 {
   gap: 0.5rem;
 }
@@ -705,9 +708,6 @@ video {
 }
 .gap-4 {
   gap: 1rem;
-}
-.gap-1 {
-  gap: 0.25rem;
 }
 .self-start {
   align-self: flex-start;
@@ -726,6 +726,9 @@ video {
 }
 .border-b-2 {
   border-bottom-width: 2px;
+}
+.border-b-\[1\.5px\] {
+  border-bottom-width: 1.5px;
 }
 .border-b-slate-200 {
   --tw-border-opacity: 1;
