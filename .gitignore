@@ -1,45 +1,46 @@
-# Dependency files
-/node_modules
-/.pnp
-.pnp.js
-
-# Testing
-/coverage
-
-# Next.js build output
-/.next/
-/out/
-# next-env.d.ts é gerado pelo Next.js e não deve ser comitado
-/next-env.d.ts
-
-# Configuration files
-# Arquivos de ambiente e senhas
-.env
-.env.local
-.env.development.local
-.env.production.local
-.env.test
-
-# Logs
+# Arquivos de Log
+logs
+*.log
 npm-debug.log*
-yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-# Database (Prisma)
-# Diretórios gerados pelo Prisma
-/prisma/dev.db
-# Banners/diretórios de engines do Prisma
-/prisma/generated/
-/src/generated/
+# Dependências do Node.js
+node_modules/
+.npm/
 
-# Outras caches e arquivos temporários
-.eslintcache
-.prettiercache
+# Arquivos de Ambiente (MUITO IMPORTANTE)
+.env
+.env.*
+!.env.example
+!.env.test
 
-# Editor e IDE
-.vscode
-.idea
-*.sublime-project
-*.sublime-workspace
+
+# Saída de Compilação (Build)
+dist/
+build/
+.out/
+
+# Arquivos de Bancos de Dados Locais (Prisma)
+*.db
+*.db-journal
+
+# Arquivos de Sistema Operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Pastas de IDEs e Editores
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testes e Cobertura de Código
+coverage/
+.nyc_output/
+
+# Arquivos de Dumps do MongoDB
+dump/
+mongodump/
+*.bson
