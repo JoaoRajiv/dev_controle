@@ -7,7 +7,17 @@ export function ModalTicket() {
             <h1 className="font-bold text-lg md:text-2xl">
               Detalhes do chamado
             </h1>
-            <button></button>
+            <button className="bg-red-500 p-1 px-2 text-white rounded">
+              Fechar
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-1 mb-2">
+            <h2 className="font-bold">Nome:</h2>
+            <p>Problema no pc</p>
+          </div>
+          <div className="flex flex-wrap flex-col gap-1 mb-2">
+            <h2 className="font-bold">Descrição:</h2>
+            <p>Teste aqui da descrição</p>
           </div>
         </div>
       </div>
