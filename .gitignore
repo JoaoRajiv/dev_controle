@@ -8,27 +8,39 @@ pnpm-debug.log*
 # Dependências do Node.js
 node_modules/
 .npm/
+.pnpm-store/ # Cache global do PNPM
 
-# Arquivos de Ambiente (MUITO IMPORTANTE)
+# Arquivos de Ambiente
 .env
 .env.*
 !.env.example
 !.env.test
 
+# Diretório de build do Next.js e Cache
+.next/
+out/          # Se usar 'next export'
+.vercel      # Arquivos do Vercel CLI
 
-# Saída de Compilação (Build)
+# Saída de Compilação (Builds)
 dist/
 build/
 .out/
+esm/
+lib/
 
 # Arquivos de Bancos de Dados Locais (Prisma)
 *.db
 *.db-journal
 
-# Arquivos de Sistema Operacional
-.DS_Store
-Thumbs.db
-desktop.ini
+# Testes e Cobertura de Código
+coverage/
+.nyc_output/
+
+# Dumps e Arquivos Temporários de Bancos de Dados
+dump/
+mongodump/
+*.bson
+*.sqlite
 
 # Pastas de IDEs e Editores
 .idea/
@@ -36,11 +48,7 @@ desktop.ini
 *.swp
 *.swo
 
-# Testes e Cobertura de Código
-coverage/
-.nyc_output/
-
-# Arquivos de Dumps do MongoDB
-dump/
-mongodump/
-*.bson
+# Arquivos de Sistema Operacional
+.DS_Store
+Thumbs.db
+desktop.ini
