@@ -35,7 +35,7 @@ export function Header() {
 
         {status === "authenticated" && (
           <div className="flex align-center gap-4 px-2">
-            <p className="text-gray-500 line-height: 0">
+            <p className="text-gray-500 line-height:0 hidden sm:block">
               Olá <span className="">{data.user.name}</span>
             </p>
             <Link href="/dashboard">
