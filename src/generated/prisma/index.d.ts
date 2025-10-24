@@ -3493,6 +3493,7 @@ export namespace Prisma {
     userId: string | null
     type: string | null
     provider: string | null
+    image: string | null
     providerAccountId: string | null
     refresh_token: string | null
     access_token: string | null
@@ -3508,6 +3509,7 @@ export namespace Prisma {
     userId: string | null
     type: string | null
     provider: string | null
+    image: string | null
     providerAccountId: string | null
     refresh_token: string | null
     access_token: string | null
@@ -3523,6 +3525,7 @@ export namespace Prisma {
     userId: number
     type: number
     provider: number
+    image: number
     providerAccountId: number
     refresh_token: number
     access_token: number
@@ -3548,6 +3551,7 @@ export namespace Prisma {
     userId?: true
     type?: true
     provider?: true
+    image?: true
     providerAccountId?: true
     refresh_token?: true
     access_token?: true
@@ -3563,6 +3567,7 @@ export namespace Prisma {
     userId?: true
     type?: true
     provider?: true
+    image?: true
     providerAccountId?: true
     refresh_token?: true
     access_token?: true
@@ -3578,6 +3583,7 @@ export namespace Prisma {
     userId?: true
     type?: true
     provider?: true
+    image?: true
     providerAccountId?: true
     refresh_token?: true
     access_token?: true
@@ -3680,6 +3686,7 @@ export namespace Prisma {
     userId: string
     type: string
     provider: string
+    image: string | null
     providerAccountId: string
     refresh_token: string | null
     access_token: string | null
@@ -3714,6 +3721,7 @@ export namespace Prisma {
     userId?: boolean
     type?: boolean
     provider?: boolean
+    image?: boolean
     providerAccountId?: boolean
     refresh_token?: boolean
     access_token?: boolean
@@ -3732,6 +3740,7 @@ export namespace Prisma {
     userId?: boolean
     type?: boolean
     provider?: boolean
+    image?: boolean
     providerAccountId?: boolean
     refresh_token?: boolean
     access_token?: boolean
@@ -3742,7 +3751,7 @@ export namespace Prisma {
     session_state?: boolean
   }
 
-  export type AccountOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "type" | "provider" | "providerAccountId" | "refresh_token" | "access_token" | "expires_at" | "token_type" | "scope" | "id_token" | "session_state", ExtArgs["result"]["account"]>
+  export type AccountOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "type" | "provider" | "image" | "providerAccountId" | "refresh_token" | "access_token" | "expires_at" | "token_type" | "scope" | "id_token" | "session_state", ExtArgs["result"]["account"]>
   export type AccountInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -3757,6 +3766,7 @@ export namespace Prisma {
       userId: string
       type: string
       provider: string
+      image: string | null
       providerAccountId: string
       refresh_token: string | null
       access_token: string | null
@@ -4162,6 +4172,7 @@ export namespace Prisma {
     readonly userId: FieldRef<"Account", 'String'>
     readonly type: FieldRef<"Account", 'String'>
     readonly provider: FieldRef<"Account", 'String'>
+    readonly image: FieldRef<"Account", 'String'>
     readonly providerAccountId: FieldRef<"Account", 'String'>
     readonly refresh_token: FieldRef<"Account", 'String'>
     readonly access_token: FieldRef<"Account", 'String'>
@@ -7562,6 +7573,7 @@ export namespace Prisma {
     userId: 'userId',
     type: 'type',
     provider: 'provider',
+    image: 'image',
     providerAccountId: 'providerAccountId',
     refresh_token: 'refresh_token',
     access_token: 'access_token',
@@ -7839,6 +7851,7 @@ export namespace Prisma {
     userId?: StringFilter<"Account"> | string
     type?: StringFilter<"Account"> | string
     provider?: StringFilter<"Account"> | string
+    image?: StringNullableFilter<"Account"> | string | null
     providerAccountId?: StringFilter<"Account"> | string
     refresh_token?: StringNullableFilter<"Account"> | string | null
     access_token?: StringNullableFilter<"Account"> | string | null
@@ -7855,6 +7868,7 @@ export namespace Prisma {
     userId?: SortOrder
     type?: SortOrder
     provider?: SortOrder
+    image?: SortOrder
     providerAccountId?: SortOrder
     refresh_token?: SortOrder
     access_token?: SortOrder
@@ -7875,6 +7889,7 @@ export namespace Prisma {
     userId?: StringFilter<"Account"> | string
     type?: StringFilter<"Account"> | string
     provider?: StringFilter<"Account"> | string
+    image?: StringNullableFilter<"Account"> | string | null
     providerAccountId?: StringFilter<"Account"> | string
     refresh_token?: StringNullableFilter<"Account"> | string | null
     access_token?: StringNullableFilter<"Account"> | string | null
@@ -7891,6 +7906,7 @@ export namespace Prisma {
     userId?: SortOrder
     type?: SortOrder
     provider?: SortOrder
+    image?: SortOrder
     providerAccountId?: SortOrder
     refresh_token?: SortOrder
     access_token?: SortOrder
@@ -7914,6 +7930,7 @@ export namespace Prisma {
     userId?: StringWithAggregatesFilter<"Account"> | string
     type?: StringWithAggregatesFilter<"Account"> | string
     provider?: StringWithAggregatesFilter<"Account"> | string
+    image?: StringNullableWithAggregatesFilter<"Account"> | string | null
     providerAccountId?: StringWithAggregatesFilter<"Account"> | string
     refresh_token?: StringNullableWithAggregatesFilter<"Account"> | string | null
     access_token?: StringNullableWithAggregatesFilter<"Account"> | string | null
@@ -8232,6 +8249,7 @@ export namespace Prisma {
     id?: string
     type: string
     provider: string
+    image?: string | null
     providerAccountId: string
     refresh_token?: string | null
     access_token?: string | null
@@ -8248,6 +8266,7 @@ export namespace Prisma {
     userId: string
     type: string
     provider: string
+    image?: string | null
     providerAccountId: string
     refresh_token?: string | null
     access_token?: string | null
@@ -8261,6 +8280,7 @@ export namespace Prisma {
   export type AccountUpdateInput = {
     type?: StringFieldUpdateOperationsInput | string
     provider?: StringFieldUpdateOperationsInput | string
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     providerAccountId?: StringFieldUpdateOperationsInput | string
     refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -8276,6 +8296,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     provider?: StringFieldUpdateOperationsInput | string
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     providerAccountId?: StringFieldUpdateOperationsInput | string
     refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -8291,6 +8312,7 @@ export namespace Prisma {
     userId: string
     type: string
     provider: string
+    image?: string | null
     providerAccountId: string
     refresh_token?: string | null
     access_token?: string | null
@@ -8304,6 +8326,7 @@ export namespace Prisma {
   export type AccountUpdateManyMutationInput = {
     type?: StringFieldUpdateOperationsInput | string
     provider?: StringFieldUpdateOperationsInput | string
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     providerAccountId?: StringFieldUpdateOperationsInput | string
     refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -8318,6 +8341,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
     provider?: StringFieldUpdateOperationsInput | string
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     providerAccountId?: StringFieldUpdateOperationsInput | string
     refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -8686,6 +8710,7 @@ export namespace Prisma {
     userId?: SortOrder
     type?: SortOrder
     provider?: SortOrder
+    image?: SortOrder
     providerAccountId?: SortOrder
     refresh_token?: SortOrder
     access_token?: SortOrder
@@ -8705,6 +8730,7 @@ export namespace Prisma {
     userId?: SortOrder
     type?: SortOrder
     provider?: SortOrder
+    image?: SortOrder
     providerAccountId?: SortOrder
     refresh_token?: SortOrder
     access_token?: SortOrder
@@ -8720,6 +8746,7 @@ export namespace Prisma {
     userId?: SortOrder
     type?: SortOrder
     provider?: SortOrder
+    image?: SortOrder
     providerAccountId?: SortOrder
     refresh_token?: SortOrder
     access_token?: SortOrder
@@ -9708,6 +9735,7 @@ export namespace Prisma {
     id?: string
     type: string
     provider: string
+    image?: string | null
     providerAccountId: string
     refresh_token?: string | null
     access_token?: string | null
@@ -9722,6 +9750,7 @@ export namespace Prisma {
     id?: string
     type: string
     provider: string
+    image?: string | null
     providerAccountId: string
     refresh_token?: string | null
     access_token?: string | null
@@ -9846,6 +9875,7 @@ export namespace Prisma {
     userId?: StringFilter<"Account"> | string
     type?: StringFilter<"Account"> | string
     provider?: StringFilter<"Account"> | string
+    image?: StringNullableFilter<"Account"> | string | null
     providerAccountId?: StringFilter<"Account"> | string
     refresh_token?: StringNullableFilter<"Account"> | string | null
     access_token?: StringNullableFilter<"Account"> | string | null
@@ -9969,6 +9999,7 @@ export namespace Prisma {
     id?: string
     type: string
     provider: string
+    image?: string | null
     providerAccountId: string
     refresh_token?: string | null
     access_token?: string | null
@@ -10008,6 +10039,7 @@ export namespace Prisma {
   export type AccountUpdateWithoutUserInput = {
     type?: StringFieldUpdateOperationsInput | string
     provider?: StringFieldUpdateOperationsInput | string
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     providerAccountId?: StringFieldUpdateOperationsInput | string
     refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10021,6 +10053,7 @@ export namespace Prisma {
   export type AccountUncheckedUpdateWithoutUserInput = {
     type?: StringFieldUpdateOperationsInput | string
     provider?: StringFieldUpdateOperationsInput | string
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     providerAccountId?: StringFieldUpdateOperationsInput | string
     refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10034,6 +10067,7 @@ export namespace Prisma {
   export type AccountUncheckedUpdateManyWithoutUserInput = {
     type?: StringFieldUpdateOperationsInput | string
     provider?: StringFieldUpdateOperationsInput | string
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     providerAccountId?: StringFieldUpdateOperationsInput | string
     refresh_token?: NullableStringFieldUpdateOperationsInput | string | null
     access_token?: NullableStringFieldUpdateOperationsInput | string | null
