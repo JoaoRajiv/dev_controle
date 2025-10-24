@@ -21,7 +21,7 @@ export function ModalTicket() {
       <div className="absolute inset-0 flex justify-center items-center">
         <div
           ref={modalRef}
-          className="bg-white shadow-lg w-4/5 md:w-1/2 max-w-2xl p-3 rounded-lg"
+          className="bg-white shadow-lg w-4/5 md:w-1/2 max-w-2xl rounded-lg p-6"
         >
           <div className="flex items-center justify-between mb-4">
             <h1 className="font-bold text-lg md:text-2xl">

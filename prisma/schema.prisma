@@ -22,10 +22,8 @@ model Customer {
   address    String?
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
-
   userId String? @db.ObjectId
   user   User?   @relation(fields: [userId], references: [id])
-
   tickets Ticket[]
 }
 
@@ -38,7 +36,6 @@ model Ticket {
   updated_at  DateTime? @default(now())
   customerId  String?   @db.ObjectId
   customer    Customer? @relation(fields: [customerId], references: [id])
-
   userId String? @db.ObjectId
   user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
@@ -48,6 +45,7 @@ model Account {
   userId            String  @map("user_id") @db.ObjectId
   type              String
   provider          String
+  image         String?
   providerAccountId String  @map("provider_account_id")
   refresh_token     String? @db.String
   access_token      String? @db.String

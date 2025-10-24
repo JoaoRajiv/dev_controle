@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dev Controle - Seu sistema de gerenciamento.",
-  description: "Gerencia seus clientes e atendimetnos de forma fácil"
+  description: "Gerencia seus clientes e atendimentos de forma fácil"
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>
+      <body className="bg-gray-100 antialiased ">
         <AuthProvider>
           <ModalProvider>
             <Header />

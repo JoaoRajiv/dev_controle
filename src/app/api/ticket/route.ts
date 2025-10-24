@@ -44,3 +44,29 @@ export async function PATCH(request: Request) {
     );
   }
 }
+
+export async function POST(request: Request) {
+  const { customerId, name, description } = await request.json();
+  if (!customerId || !name || !description) {
+    return NextResponse.json({ error: "Invalid data" }, { status: 400 });
+  }
+  try {
+    await prismaClient.ticket.create({
+      data: {
+        customerId,
+        name,
+        status: "ABERTO",
+        description
+      }
+    });
+    return NextResponse.json(
+      { message: "Chamado registrado com sucesso" },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Failed create ticket" },
+      { status: 400 }
+    );
+  }
+}

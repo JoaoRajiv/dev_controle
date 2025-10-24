@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { FiUser, FiLogOut, FiLoader, FiLock } from "react-icons/fi";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 export function Header() {
   const { status, data } = useSession();
 
@@ -34,12 +35,24 @@ export function Header() {
         )}
 
         {status === "authenticated" && (
-          <div className="flex align-center gap-4 px-2">
+          <div className="flex align-center gap-4 px-2 items-center">
             <p className="text-gray-500 line-height:0 hidden sm:block">
               Olá <span className="">{data.user.name}</span>
             </p>
+
             <Link href="/dashboard">
-              <FiUser size={26} color="#4b5563" />
+              {data.user.image ? (
+                <Image
+                  src={data.user.image}
+                  width={50}
+                  height={50}
+                  className="rounded-lg"
+                  alt="User avatar"
+                  quality={100}
+                />
+              ) : (
+                <FiUser size={26} color="#4b5563" />
+              )}
             </Link>
             <button onClick={handleLogout}>
               <FiLogOut size={26} className="text-red-500" />
