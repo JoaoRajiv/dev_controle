@@ -35,18 +35,23 @@ export function Header() {
         )}
 
         {status === "authenticated" && (
-          <div className="flex align-center gap-4 px-2 items-center">
+          <div className="flex align-center gap-5 px-2 items-center">
             <p className="text-gray-500 line-height:0 hidden sm:block">
-              Olá <span className="">{data.user.name}</span>
+              Olá{" "}
+              <Link href="/dashboard">
+                <span className="hover:text-[#2664eb] font-bold duration-300">
+                  {data.user.name}
+                </span>
+              </Link>
             </p>
 
             <Link href="/dashboard">
               {data.user.image ? (
                 <Image
                   src={data.user.image}
-                  width={50}
-                  height={50}
-                  className="rounded-lg"
+                  width={48}
+                  height={48}
+                  className="rounded-full border-2 border-gray-900 hover:scale-105 duration-200"
                   alt="User avatar"
                   quality={100}
                 />
