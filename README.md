@@ -53,9 +53,9 @@ Este projeto foi construído com as seguintes tecnologias:
 
 Aqui estão algumas telas do projeto em ação:
 
-|                  Home                   |                    Dashboard                    |                      Novo Chamado                       |
-| :-------------------------------------: | :---------------------------------------------: | :-----------------------------------------------------: |
-| ![Tela de Login](./images/home.png.png) | ![Dashboard de Chamados](./images/chamados.png) | ![Formulário de Novo Chamado](./images/novoChamado.png) |
+|                Home                 |                    Dashboard                    |                      Novo Chamado                       |
+| :---------------------------------: | :---------------------------------------------: | :-----------------------------------------------------: |
+| ![Tela de Login](./images/home.png) | ![Dashboard de Chamados](./images/chamados.png) | ![Formulário de Novo Chamado](./images/novoChamado.png) |
 
 ## 🚀 Como Executar o Projeto
 
