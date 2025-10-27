@@ -4,6 +4,8 @@ Este é um sistema web full-stack para gerenciamento de chamados de suporte, per
 
 ![Status](https://img.shields.io/badge/status-em_desenvolvimento-yellow)
 
+[![Deploy com Vercel](https://vercel.com/button)](https://dev-controle-blue.vercel.app/)
+
 ## 📖 Índice
 
 - [Visão Geral](#-visão-geral)
