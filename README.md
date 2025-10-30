@@ -11,7 +11,7 @@ Este é um sistema web full-stack para gerenciamento de chamados de suporte, per
 - [Visão Geral](#-visão-geral)
 - [Funcionalidades Principais](#-funcionalidades-principais)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [🖼️ Preview](#-preview) - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [🖼️ Preview](#-preview)
 - [Como Executar o Projeto](#-como-executar-o-projeto)
   - [Pré-requisitos](#pré-requisitos)
   - [Configuração do Ambiente](#configuração-do-ambiente)
@@ -141,14 +141,3 @@ Este projeto foi desenvolvido com base no conteúdo do curso NextJS do zero ao a
 Todo o conceito central e a arquitetura do projeto foram ensinados durante o curso. Meu trabalho consistiu em acompanhar, implementar, adaptar e aprimorar alguns aspectos.
 
 Você pode encontrar o curso original aqui: https://www.udemy.com/course/nextjs-zero-ao-avancado 2. **Acesse a aplicação:**
-Abra seu navegador e acesse [http://localhost:3000](http://localhost:3000).
-
----
-
-## 🎓 Créditos e Agradecimentos
-
-Este projeto foi desenvolvido com base no conteúdo do curso NextJS do zero ao avançado na pratica 2025 ministrado por Matheus Fraga (Sujeito Programador).
-
-Todo o conceito central e a arquitetura do projeto foram ensinados durante o curso. Meu trabalho consistiu em acompanhar, implementar, adaptar e aprimorar alguns aspectos.
-
-Você pode encontrar o curso original aqui: https://www.udemy.com/course/nextjs-zero-ao-avancado
