@@ -1,20 +1,23 @@
 "use client";
-
 import { CustomerProps } from "@/utils/customer.type";
 import { api } from "@/lib/api";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export function CardCustomer({ customer }: { customer: CustomerProps }) {
   const router = useRouter();
 
   async function handleDeleteCustomer() {
+    if (!customer?.id) {
+      console.error("ID do cliente ausente.");
+      return; // Sai da função se não houver ID
+    }
     try {
-      const response = await api.delete(`/api/customer`, {
-        params: { id: customer.id }
-      });
+      const response = await api.delete(`/api/customer?id=${customer.id}`);
+      toast.success(response.data.message || "Cliente deletado com sucesso!");
       router.refresh();
-    } catch (error) {
-      console.log("Failed to delete customer", error);
+    } catch (error: any) {
+      toast.error(error.response?.data?.error || "Failed to delete customer");
     }
   }
 

@@ -32,22 +32,20 @@ export async function DELETE(request: Request) {
   const { searchParams } = new URL(request.url);
   const userId = searchParams.get("id");
 
-  if (!userId) {
-    return NextResponse.json(
-      { error: "Failed delete customer" },
-      { status: 400 }
-    );
-  }
-
   const findTickets = await prismaClient.ticket.findFirst({
     where: {
-      customerId: userId
+      customerId: userId,
+      status: {
+        not: "FECHADO"
+      }
     }
   });
 
   if (findTickets) {
     return NextResponse.json(
-      { error: "Failed delete customer" },
+      {
+        error: "Cliente não pode ser deletado, pois possui tickets vinculados."
+      },
       { status: 400 }
     );
   }

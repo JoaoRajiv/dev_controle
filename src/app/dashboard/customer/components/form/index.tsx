@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/input";
 import { api } from "@/lib/api";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 const schema = z.object({
   name: z.string().min(1, "O campo nome é obrigatório"),
@@ -45,6 +46,8 @@ export function NewCustomerForm({ userId }: { userId: string }) {
       address: data.address,
       userId: userId
     });
+
+    toast.success(response.data.message || "Cliente cadastrado com sucesso!");
     router.refresh();
     router.replace("/dashboard/customer");
   }
